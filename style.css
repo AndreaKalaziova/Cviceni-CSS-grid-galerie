@@ -3,4 +3,53 @@ html { box-sizing: border-box; }
 *, ::before, ::after { box-sizing: inherit; }
 
 /* ---------------------------------------------------- */
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
+main {
+    margin: auto;
+    padding: 2px;
+    width: 100%;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.kontejner {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(7, 9%);
+    gap: 1px;    
+}
+.kontejner > div:nth-child(5n) {
+    grid-column:span 2 ;
+  }
+  
+  div:nth-child(5n) img {
+      width: 100%;
+}
+
+@media (min-width: 800px) {
+    main { min-width: 100%}
+    .kontejner {
+        grid-template-columns: repeat(3, 33.3%);
+        grid-template-rows: repeat(6, 300px);
+        gap: 2px;        
+    }
+    
+    .kontejner > div:nth-child(5n) {
+      grid-column:span 2 ;
+      grid-row: span 2;
+    }
+    
+    div:nth-child(5n) img {
+        width: 100%;
+    }   
+}
